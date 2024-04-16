@@ -5,7 +5,7 @@ class __DBConnectionHandler:
     def __init__(self) -> None:
         self.__connection_string = "{}:///{}".format(
             "sqlite",
-            "storage.db"
+            "..\\nlw-unite-c-sharp\\PassIn\\PassInDb.db"
         )
         self.__engine = None
         self.session = None

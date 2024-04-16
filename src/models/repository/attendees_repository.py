@@ -53,7 +53,7 @@ class AttendeesRepository:
             attendees = (
                 database.session
                     .query(Attendees)
-                    .outerjoin(CheckIns, CheckIns.attendeeId==Attendees.id)
+                    .outerjoin(CheckIns, CheckIns.attendee_Id==Attendees.id)
                     .filter(Attendees.event_id==event_id)
                     .with_entities(
                         Attendees.id,

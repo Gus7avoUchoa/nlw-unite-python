@@ -3,11 +3,11 @@ from sqlalchemy import Column, String, Integer, DateTime, ForeignKey
 from sqlalchemy.sql import func
 
 class CheckIns(Base):
-    __tablename__ = "check_ins"
+    __tablename__ = "checkIns"
 
-    id = Column(Integer, primary_key=True)
+    id = Column(String, primary_key=True)
     created_at = Column(DateTime, default=func.now())
-    attendeeId = Column(String, ForeignKey("attendees.id"))
+    attendee_Id = Column(String, ForeignKey("attendees.id"))
 
     def __repr__(self):
-        return f"CheckIns [attendeeId={self.attendeeId}]"
+        return f"CheckIns [attendee_Id={self.attendee_Id}]"

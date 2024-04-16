@@ -19,9 +19,15 @@ def test_insert_attendee():
 
 @pytest.mark.skip(reason="...")
 def test_get_attendee_badge_by_id():
-    attendde_id = "meu_uuid_attendee"
+    attendde_id = "meu_uuid_attendee3"
     attendees_repository = AttendeesRepository()
     attendee = attendees_repository.get_attendee_badge_by_id(attendde_id)
-
     print(attendee)
     print(attendee.title)
+
+# @pytest.mark.skip(reason="...")
+def test_get_attendees_by_event_id():
+    event_id = "64E0FC4B-A256-4420-85A0-DC4D7FED8338"
+    attendees_repository = AttendeesRepository()
+    attendees = attendees_repository.get_attendees_by_event_id(event_id)
+    print(attendees)

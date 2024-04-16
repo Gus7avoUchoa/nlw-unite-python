@@ -10,8 +10,8 @@ def create_attendees(event_id):
     try:
         attendees_handle = AttendeesHandler()
         http_request = HttpRequest(param={ "event_id": event_id }, body=request.json)
-
         http_response = attendees_handle.registry(http_request)
+        
         return jsonify(http_response.body), http_response.status_code
     except Exception as exception:
         http_response = handle_error(exception)
